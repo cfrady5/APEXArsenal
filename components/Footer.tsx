@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <img src="/brand/logo-reversed.svg" alt="APEX Arsenal Marketplace" width={190} height={73} />
+          <img src="/brand/logo-reversed.svg" alt="APEX Arsenal Marketplace" width={190} height={73} loading="lazy" />
           <p>
             Connecting innovative solutions with mission-driven partners to accelerate adoption and deliver real impact.
           </p>

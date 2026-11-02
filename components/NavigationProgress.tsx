@@ -22,6 +22,8 @@ export default function NavigationProgress() {
       if (url.origin !== location.origin) return;
       if (url.pathname === location.pathname) return; // same page (hash links)
       setState("loading");
+      if (timer.current) window.clearTimeout(timer.current);
+      timer.current = window.setTimeout(() => setState("idle"), 8000);
     };
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);

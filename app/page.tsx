@@ -14,9 +14,11 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__media" aria-hidden="true" style={{ backgroundImage: `url(${heroPlaceholder})` }}>
-          <img src="/images/hero-jet.jpg" alt="" width={1800} height={1621} fetchPriority="high" />
-        </div>
+        <div
+          className="hero__media"
+          aria-hidden="true"
+          style={{ backgroundImage: `url(/images/hero-jet.jpg), url(${heroPlaceholder})` }}
+        />
         <div className="container">
           <div className="hero__inner hero-enter">
             <p className="eyebrow">APEX Arsenal Marketplace</p>
