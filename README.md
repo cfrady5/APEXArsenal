@@ -32,5 +32,9 @@ help desk so no button dead-ends. Explainer videos show a "coming soon" poster u
 
 - `public/brand/` — official logo lockups, APEX mark and X icon (SVG), plus app-icon PNGs.
 - `public/images/` — purple-washed photography from the brand guidelines.
-- `app/globals.css` — design tokens (`:root`) and every component style.
+- `app/globals.css` — design tokens (`:root`) and every component style. APEX Purple is used as-is for rules,
+  bars and large numerals; small text and white-on-purple buttons use the slightly deepened `--purple-ink` /
+  `--purple-text` tones so they clear WCAG AA contrast (the true brand purple reaches only 3.8:1 on white).
+- Motion is limited to short reveal transitions, a staggered hero entrance and a navigation progress bar, all
+  disabled under `prefers-reduced-motion`.
 - `lib/content.ts` — focus areas, process steps, checklist and FAQ copy.

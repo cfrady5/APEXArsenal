@@ -13,6 +13,13 @@ export const metadata: Metadata = {
     "Guidance for assessing solution fit, preparing a pitch, understanding assessment results, and exploring capabilities for a government mission.",
 };
 
+const tiles = [
+  ["Air", "/images/tile-air.jpg"],
+  ["Cyber", "/images/tile-cyber.jpg"],
+  ["Space", "/images/tile-space.jpg"],
+  ["C4ISR", "/images/tile-c4isr.jpg"],
+];
+
 export default function ResourcesPage() {
   return (
     <>
@@ -33,9 +40,10 @@ export default function ResourcesPage() {
 
       <Section tone="hazy" labelledBy="start-title">
         <div className="split">
-          <div>
-            <SectionHead eyebrow="Start With the Strategic Focus Areas" title="Identify where your solution fits" id="start-title" />
-            <p>
+          <div data-reveal>
+            <p className="eyebrow">Start With the Strategic Focus Areas</p>
+            <h2 id="start-title">Identify where your solution fits</h2>
+            <p style={{ marginTop: 20 }} className="measure">
               Review the ten Strategic Focus Areas to identify where your solution fits. Select the predominant area in
               your submission form and explain relevant alignment in your video. Read the solicitation for complete
               definitions and requirements.
@@ -47,30 +55,11 @@ export default function ResourcesPage() {
               </Button>
             </div>
           </div>
-          <div className="tile-grid">
-            {[
-              ["Air", "/images/tile-air.jpg"],
-              ["Cyber", "/images/tile-cyber.jpg"],
-              ["Space", "/images/tile-space.jpg"],
-              ["C4ISR", "/images/tile-c4isr.jpg"],
-            ].map(([label, src]) => (
-              <figure key={label} className="wash" style={{ margin: 0, aspectRatio: "1 / 1" }}>
+          <div className="tile-grid" data-reveal-group>
+            {tiles.map(([label, src]) => (
+              <figure key={label} className="wash" style={{ margin: 0 }}>
                 <img src={src} alt="" width={310} height={294} loading="lazy" />
-                <figcaption
-                  style={{
-                    position: "absolute",
-                    left: 14,
-                    bottom: 12,
-                    zIndex: 1,
-                    color: "var(--dod-white)",
-                    fontWeight: 700,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    fontSize: "0.78rem",
-                  }}
-                >
-                  {label}
-                </figcaption>
+                <figcaption className="wash__caption">{label}</figcaption>
               </figure>
             ))}
           </div>
@@ -79,7 +68,7 @@ export default function ResourcesPage() {
 
       <Section id="videos" tone="dark" labelledBy="videos-title">
         <SectionHead eyebrow="Explainer Videos" title="Learn the Marketplace in minutes" id="videos-title" />
-        <div className="grid grid--3">
+        <div className="grid grid--3" data-reveal-group>
           <VideoCard
             title="Get to Know the Marketplace"
             body="Learn what the Marketplace offers, who can participate, and how submission, assessment, and government discovery work."
@@ -99,22 +88,22 @@ export default function ResourcesPage() {
             embedUrl={links.videoGovernment || undefined}
           />
         </div>
-        <div className="links-row">
+        <div className="links-row" data-reveal>
           <a href="/industry#checklist">Submission Checklist</a>
           <a href={links.solicitation}>Read the Solicitation</a>
         </div>
       </Section>
 
       <Section id="faq" tone="light" labelledBy="faq-title">
-        <SectionHead eyebrow="Frequently Asked Questions" title="Answers before you submit" id="faq-title" />
+        <SectionHead title="Frequently asked questions" id="faq-title" />
         <Faq />
       </Section>
 
       <Section tone="hazy" labelledBy="helpdesk-title">
-        <div className="audience">
-          <article className="audience__panel">
-            <p className="eyebrow">Help Desk</p>
-            <h2 id="helpdesk-title" className="h2">
+        <div className="grid grid--2" data-reveal-group>
+          <article className="card card--light">
+            <span className="card__index">Help Desk</span>
+            <h2 id="helpdesk-title" className="h2" style={{ fontSize: "clamp(1.7rem, 3vw, 2.4rem)" }}>
               Questions? Email the team
             </h2>
             <p>
@@ -125,9 +114,11 @@ export default function ResourcesPage() {
               <Button href={links.helpDesk}>Contact the Help Desk</Button>
             </div>
           </article>
-          <article className="audience__panel">
-            <p className="eyebrow">Office Hours and Assessment Feedback</p>
-            <h2 className="h2">Plan your next submission</h2>
+          <article className="card card--light">
+            <span className="card__index">Office Hours and Assessment Feedback</span>
+            <h2 className="h2" style={{ fontSize: "clamp(1.7rem, 3vw, 2.4rem)" }}>
+              Plan your next submission
+            </h2>
             <p>
               Connect with the Marketplace team for process guidance or a one-on-one session to review assessment
               feedback and plan a revised submission. Feedback sessions are offered through APEX Arsenal Real People

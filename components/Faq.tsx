@@ -2,7 +2,7 @@ import { faqs } from "@/lib/content";
 
 export default function Faq() {
   return (
-    <div className="faq">
+    <div className="faq" data-reveal>
       {faqs.map((item) => (
         <details key={item.q}>
           <summary>{item.q}</summary>

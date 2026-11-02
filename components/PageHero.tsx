@@ -6,7 +6,7 @@ export default function PageHero({ eyebrow, title, intro, children }: Props) {
   return (
     <section className="page-hero" aria-labelledby="page-title">
       <div className="container">
-        <div className="page-hero__inner">
+        <div className="page-hero__inner hero-enter">
           <p className="eyebrow">{eyebrow}</p>
           <h1 id="page-title">{title}</h1>
           {intro && <p className="lead">{intro}</p>}

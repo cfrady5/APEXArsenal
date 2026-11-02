@@ -1,31 +1,29 @@
 import Link from "next/link";
 import Button from "@/components/Button";
 import FocusAreas from "@/components/FocusAreas";
+import Panel from "@/components/Panel";
 import Section from "@/components/Section";
 import SectionHead from "@/components/SectionHead";
 import Steps from "@/components/Steps";
 import { homeSteps } from "@/lib/content";
 import { links } from "@/lib/links";
+import { heroPlaceholder } from "@/lib/placeholders";
 
 export default function HomePage() {
   return (
     <>
       {/* Hero */}
       <section className="hero" aria-labelledby="hero-title">
-        <div className="hero__media" aria-hidden="true">
+        <div className="hero__media" aria-hidden="true" style={{ backgroundImage: `url(${heroPlaceholder})` }}>
           <img src="/images/hero-jet.jpg" alt="" width={1800} height={1621} fetchPriority="high" />
         </div>
         <div className="container">
-          <div className="hero__inner">
+          <div className="hero__inner hero-enter">
             <p className="eyebrow">APEX Arsenal Marketplace</p>
             <h1 id="hero-title">Bring your solution to government customers</h1>
             <p className="lead">
               Submit a five-minute video pitch for expert assessment and feedback. Solutions determined to be awardable
               become discoverable by authorized government customers for potential acquisition.
-            </p>
-            <p className="lead">
-              Help sustain, modernize, and grow the American defense industrial base, and deliver critical capabilities
-              to the warfighter.
             </p>
             <div className="actions">
               <Button href="/#focus-areas">See If Your Solution Fits</Button>
@@ -36,44 +34,73 @@ export default function HomePage() {
                 How It Works
               </Button>
             </div>
-            <p className="hero__sponsor">Sponsored by the Department of War&rsquo;s Office of Industrial Base Growth.</p>
-            <div className="hero__rule" aria-hidden="true" />
+            <p className="hero__sponsor">
+              Help sustain, modernize, and grow the American defense industrial base, and deliver critical capabilities
+              to the warfighter.
+            </p>
           </div>
         </div>
       </section>
 
+      {/* Program facts */}
+      <div className="facts" aria-label="Program at a glance">
+        <div className="container">
+          <ul className="facts__list" data-reveal-group>
+            <li>
+              <span className="facts__value">
+                5<small>min</small>
+              </span>
+              <span className="facts__label">One video pitch per solution</span>
+            </li>
+            <li>
+              <span className="facts__value">10</span>
+              <span className="facts__label">Strategic Focus Areas</span>
+            </li>
+            <li>
+              <span className="facts__value">Expert</span>
+              <span className="facts__label">Peer assessment with written feedback</span>
+            </li>
+            <li>
+              <span className="facts__value">Direct</span>
+              <span className="facts__label">Discovery by authorized government users</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       {/* Strategic Focus Areas */}
       <Section id="focus-areas" tone="hazy" labelledBy="focus-title">
-        <SectionHead eyebrow="Strategic Focus Areas" title="What solutions are we seeking" id="focus-title">
-          <p>
-            Does your solution address one or more of these Strategic Focus Areas? Explore the areas below, then review
-            the solicitation for complete definitions and requirements.
-          </p>
-        </SectionHead>
-        <FocusAreas />
-        <div className="actions">
-          <Button href={links.solicitation}>Read the Solicitation</Button>
+        <div className="ledger-layout">
+          <div className="ledger-layout__intro" data-reveal>
+            <p className="eyebrow">Strategic Focus Areas</p>
+            <h2 id="focus-title">What solutions are we seeking</h2>
+            <p style={{ marginTop: 20 }} className="measure">
+              Does your solution address one or more of these Strategic Focus Areas? Explore the areas, then review the
+              solicitation for complete definitions and requirements.
+            </p>
+            <div className="actions">
+              <Button href={links.solicitation}>Read the Solicitation</Button>
+            </div>
+          </div>
+          <FocusAreas />
         </div>
       </Section>
 
       {/* How It Works */}
       <Section id="how-it-works" tone="dark" labelledBy="how-title">
-        <SectionHead eyebrow="Connect. Accelerate. Deliver." title="How it works" id="how-title" />
+        <SectionHead eyebrow="Connect. Accelerate. Deliver." title="How it works" id="how-title" row>
+          <p className="note">An awardable determination does not guarantee funding or a contract.</p>
+        </SectionHead>
         <Steps steps={homeSteps} />
-        <p className="note" style={{ marginTop: 32 }}>
-          An awardable determination does not guarantee funding or a contract.
-        </p>
       </Section>
 
       {/* Audiences */}
-      <Section tone="hazy" labelledBy="audience-title">
+      <section aria-labelledby="audience-title">
         <h2 id="audience-title" className="visually-hidden">
           Who the Marketplace serves
         </h2>
-        <div className="audience">
-          <article className="audience__panel">
-            <p className="eyebrow">For Industry</p>
-            <h2 className="h2">Pitch your capability in five minutes</h2>
+        <div className="panels">
+          <Panel eyebrow="For Industry" title="Pitch your capability in five minutes" image="/images/jet-portrait.jpg">
             <p>
               Present your capability in a five-minute pitch. Receive expert feedback on its technical merit. If your
               solution is determined to be awardable, make it discoverable by government customers seeking capabilities
@@ -82,28 +109,27 @@ export default function HomePage() {
             <div className="actions">
               <Button href="/industry#pitch">Prepare Your Five-Minute Pitch</Button>
             </div>
-          </article>
-          <article className="audience__panel">
-            <p className="eyebrow">For Government</p>
-            <h2 className="h2">Find capabilities for your mission</h2>
+          </Panel>
+          <Panel eyebrow="For Government" title="Find capabilities for your mission" image="/images/operators-wide.jpg">
             <p>
               Find competitively assessed capabilities that support your mission. Access the Marketplace, review
               solutions, and connect directly with providers to explore potential acquisition.
             </p>
             <div className="actions">
-              <Button href="/government">Explore Assessed Solutions</Button>
+              <Button href="/government" variant="outline" onDark>
+                Explore Assessed Solutions
+              </Button>
             </div>
-          </article>
+          </Panel>
         </div>
-      </Section>
+      </section>
 
       {/* Get Support */}
-      <Section tone="dark" labelledBy="support-title">
-        <div className="support">
+      <Section tone="hazy" labelledBy="support-title">
+        <div className="support" data-reveal-group>
           <div>
-            <p className="eyebrow">Get Support</p>
             <h2 id="support-title">Questions about fit, submissions, or access?</h2>
-            <p className="lead" style={{ marginTop: 18, fontWeight: 400 }}>
+            <p style={{ marginTop: 18 }} className="measure">
               Contact the Marketplace team or schedule office hours for process guidance.
             </p>
             <div className="links-row">
@@ -112,12 +138,14 @@ export default function HomePage() {
               <Link href="/resources#faq">Read the FAQs</Link>
             </div>
           </div>
-          <div className="support__contact">
-            <p className="eyebrow">Help Desk</p>
+          <div className="card card--black">
+            <span className="card__index">Help Desk</span>
             <p>
-              <a href={links.helpDesk}>{links.helpDeskEmail}</a>
+              <a href={links.helpDesk} style={{ fontWeight: 700, fontSize: "1.1rem" }}>
+                {links.helpDeskEmail}
+              </a>
             </p>
-            <p style={{ marginTop: 12, color: "var(--smoke-gray)", fontSize: "0.95rem" }}>
+            <p style={{ color: "var(--smoke)", fontSize: "0.95rem" }}>
               Eligibility, solution fit, submission requirements, account registration, government access, and
               technical issues.
             </p>

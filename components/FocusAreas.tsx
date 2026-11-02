@@ -1,19 +1,23 @@
 import { focusAreas } from "@/lib/content";
 import { links } from "@/lib/links";
 
+/** Numbered ledger of the ten Strategic Focus Areas. */
 export default function FocusAreas() {
+  const external = links.solicitation.startsWith("http");
   return (
-    <div className="focus-grid">
+    <ol className="ledger" data-reveal-group>
       {focusAreas.map((area, i) => (
-        <article className="card" key={area.id} id={`focus-${area.id}`}>
-          <span className="card__index">{String(i + 1).padStart(2, "0")}</span>
+        <li key={area.id} id={`focus-${area.id}`}>
+          <span className="ledger__num" aria-hidden="true">
+            {String(i + 1).padStart(2, "0")}
+          </span>
           <h4>{area.title}</h4>
           <p>{area.summary}</p>
-          <a className="card__link" href={links.solicitation} target={links.solicitation.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
+          <a className="ledger__link" href={links.solicitation} target={external ? "_blank" : undefined} rel="noopener noreferrer">
             View Full Definition
           </a>
-        </article>
+        </li>
       ))}
-    </div>
+    </ol>
   );
 }

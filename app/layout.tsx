@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Lato, Oswald } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import NavigationProgress from "@/components/NavigationProgress";
+import RevealObserver from "@/components/RevealObserver";
 import "./globals.css";
 
 const oswald = Oswald({
@@ -41,6 +43,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <Header />
+        <NavigationProgress />
+        <RevealObserver />
         <main id="main">{children}</main>
         <Footer />
       </body>
