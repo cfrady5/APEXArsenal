@@ -27,16 +27,6 @@ export default function Header() {
 
   return (
     <>
-      <div className="topbar">
-        <div className="container topbar__inner">
-          <span>Sponsored by the Department of War&rsquo;s Office of Industrial Base Growth</span>
-          <div className="topbar__links">
-            <a href={links.helpDesk}>{links.helpDeskEmail}</a>
-            <a href={links.governmentMarketplace}>Government Access</a>
-          </div>
-        </div>
-      </div>
-
       <header className="header" data-scrolled={scrolled}>
         <div className="container header__inner">
           <Link href="/" className="header__logo" aria-label="APEX Arsenal Marketplace home">

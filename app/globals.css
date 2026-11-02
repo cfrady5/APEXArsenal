@@ -470,52 +470,6 @@ p:last-child {
 /* ------------------------------------------------------------------
    Header
    ------------------------------------------------------------------ */
-.topbar {
-  background: var(--dod-black);
-  color: var(--harbor-gray);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-}
-
-.topbar__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  min-height: 36px;
-}
-
-.topbar__inner > span::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin-right: 10px;
-  background: var(--apex-turquoise);
-  vertical-align: 1px;
-}
-
-.topbar a {
-  color: var(--dod-white);
-  font-weight: 700;
-}
-
-.topbar a:hover {
-  color: var(--apex-turquoise);
-  text-decoration: none;
-}
-
-.topbar__links {
-  display: none;
-  gap: 24px;
-}
-
-@media (min-width: 760px) {
-  .topbar__links {
-    display: flex;
-  }
-}
-
 .header {
   position: sticky;
   top: 0;
