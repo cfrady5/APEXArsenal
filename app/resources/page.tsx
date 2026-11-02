@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 };
 
 const tiles = [
-  ["Air", "/images/tile-air.jpg"],
-  ["Cyber", "/images/tile-cyber.jpg"],
-  ["Space", "/images/tile-space.jpg"],
-  ["C4ISR", "/images/tile-c4isr.jpg"],
+  ["Air", "/images/stock/tile-air.jpg"],
+  ["Cyber", "/images/stock/tile-cyber.jpg"],
+  ["Space", "/images/stock/tile-space.jpg"],
+  ["C4ISR", "/images/stock/tile-c4isr.jpg"],
 ];
 
 export default function ResourcesPage() {
@@ -58,7 +58,7 @@ export default function ResourcesPage() {
           <div className="tile-grid" data-reveal-group>
             {tiles.map(([label, src]) => (
               <figure key={label} className="wash" style={{ margin: 0 }}>
-                <img src={src} alt="" width={310} height={294} loading="lazy" />
+                <img src={src} alt="" width={640} height={640} loading="lazy" decoding="async" />
                 <figcaption className="wash__caption">{label}</figcaption>
               </figure>
             ))}
@@ -72,7 +72,7 @@ export default function ResourcesPage() {
           <VideoCard
             title="Get to Know the Marketplace"
             body="Learn what the Marketplace offers, who can participate, and how submission, assessment, and government discovery work."
-            poster="/images/jet-portrait.jpg"
+            poster="/images/stock/poster-marketplace.jpg"
             embedUrl={links.videoMarketplace || undefined}
           />
           <VideoCard

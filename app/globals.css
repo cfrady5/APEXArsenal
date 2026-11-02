@@ -926,18 +926,67 @@ p:last-child {
 
 .ledger li {
   display: grid;
-  grid-template-columns: 56px 1fr;
-  gap: 8px 20px;
-  padding: 24px 12px 24px 0;
+  grid-template-columns: 96px 1fr;
+  grid-template-areas:
+    "thumb title"
+    "thumb body"
+    "thumb link";
+  gap: 8px 18px;
+  padding: 22px 12px 22px 0;
   border-bottom: 1px solid rgba(20, 20, 20, 0.14);
   transition: background-color 200ms var(--ease-out);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 760px) {
   .ledger li {
-    grid-template-columns: 64px 1.1fr 1.4fr auto;
-    align-items: baseline;
+    grid-template-columns: 44px 168px 1fr;
+    grid-template-areas:
+      "num thumb title"
+      "num thumb body"
+      "num thumb link";
+    gap: 10px 24px;
+    padding-block: 26px;
+    align-items: start;
   }
+}
+
+@media (min-width: 1200px) {
+  .ledger li {
+    grid-template-columns: 44px 184px 1fr;
+  }
+}
+
+.ledger__thumb {
+  grid-area: thumb;
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--dod-black);
+}
+
+.ledger__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms var(--ease-out);
+}
+
+.ledger li:hover .ledger__thumb img {
+  transform: scale(1.04);
+}
+
+.ledger h4 {
+  grid-area: title;
+  font-size: 1.3rem;
+}
+
+.ledger p {
+  grid-area: body;
+}
+
+.ledger__link {
+  grid-area: link;
 }
 
 .ledger li:hover {
@@ -949,11 +998,20 @@ p:last-child {
 }
 
 .ledger__num {
+  grid-area: num;
+  display: none;
   font-family: var(--font-heading);
   font-weight: 500;
   font-size: 1.35rem;
   line-height: 1;
+  padding-top: 2px;
   color: var(--apex-purple);
+}
+
+@media (min-width: 760px) {
+  .ledger__num {
+    display: block;
+  }
 }
 
 .ledger h4 {
@@ -963,17 +1021,9 @@ p:last-child {
 .ledger p {
   margin: 0;
   font-size: 0.95rem;
-  grid-column: 2;
-}
-
-@media (min-width: 700px) {
-  .ledger p {
-    grid-column: auto;
-  }
 }
 
 .ledger__link {
-  grid-column: 2;
   justify-self: start;
   font-weight: 700;
   font-size: 0.76rem;
@@ -984,12 +1034,6 @@ p:last-child {
   padding-bottom: 3px;
   white-space: nowrap;
   transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out);
-}
-
-@media (min-width: 700px) {
-  .ledger__link {
-    grid-column: auto;
-  }
 }
 
 .ledger__link:hover {

@@ -1,58 +1,68 @@
-export type FocusArea = { id: string; title: string; summary: string };
+export type FocusArea = { id: string; title: string; summary: string; image: string };
 
 export const focusAreas: FocusArea[] = [
   {
+    image: "/images/stock/focus-sustainment.jpg",
     id: "sustainment",
     title: "Sustainment of Critical Production Solutions",
     summary: "Improve material availability, reliability, maintainability, mobility, commonality, or affordability.",
   },
   {
+    image: "/images/stock/focus-commercialization.jpg",
     id: "commercialization",
     title: "Commercialization of Research and Development Investment Solutions",
     summary: "Advance component or system development and demonstration to establish commercial viability or scale up.",
   },
   {
+    image: "/images/stock/focus-emerging-technology.jpg",
     id: "emerging-technology",
     title: "Scaling Emerging Technology Solutions",
     summary: "Enable the rapid, affordable introduction of emerging capabilities into the organic or commercial marketplace.",
   },
   {
+    image: "/images/stock/focus-workforce.jpg",
     id: "workforce",
     title: "Domestic Workforce Solutions",
     summary:
       "Expand training, recruitment, and outreach to address shortages of skilled industrial workers, including those supporting ship and submarine production and sustainment.",
   },
   {
+    image: "/images/stock/focus-microelectronics.jpg",
     id: "microelectronics",
     title: "Microelectronics, Energy Storage, and Battery Solutions",
     summary:
       "Reduce reliance on foreign sources through domestic sourcing, design, manufacturing, and delivery, including radio frequency microelectronics.",
   },
   {
+    image: "/images/stock/focus-kinetic-weapons.jpg",
     id: "kinetic-weapons",
     title: "Kinetic Weapon Solutions",
     summary:
       "Improve supply chain resilience for kinetic and hypersonic weapon systems, subsystems, components, materials, and enabling technologies.",
   },
   {
+    image: "/images/stock/focus-critical-chemicals.jpg",
     id: "critical-chemicals",
     title: "Critical Chemical Solutions",
     summary:
       "Reduce foreign dependencies by establishing domestic light and heavy rare earth element separation, metallization, and processing capabilities for Department of War use.",
   },
   {
+    image: "/images/stock/focus-casting-forging.jpg",
     id: "casting-forging",
     title: "Casting and Forging Solutions",
     summary:
       "Strengthen domestic capacity and capabilities for cast and forged parts, including alternative methods for specialty metal alloys.",
   },
   {
+    image: "/images/stock/focus-space-systems.jpg",
     id: "space-systems",
     title: "Space System Solutions",
     summary:
       "Expand space industrial base capabilities for space awareness, operations, satellites, mission automation, and next-generation architectures.",
   },
   {
+    image: "/images/stock/focus-industrial-base-readiness.jpg",
     id: "industrial-base-readiness",
     title: "Industrial Base Readiness Solutions",
     summary:

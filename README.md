@@ -38,3 +38,9 @@ help desk so no button dead-ends. Explainer videos show a "coming soon" poster u
 - Motion is limited to short reveal transitions, a staggered hero entrance and a navigation progress bar, all
   disabled under `prefers-reduced-motion`.
 - `lib/content.ts` — focus areas, process steps, checklist and FAQ copy.
+
+## Stock photography
+
+Source files live in `assets/stock/` (64 originals, 2400px). The site never serves these directly: web versions are
+generated into `public/images/stock/` with the brand grade baked in (grayscale, deepened midtones, APEX Purple
+colorize) so every photo sits in the palette. Regenerate them with the script in `scripts/grade-images.py`.

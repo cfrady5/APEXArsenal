@@ -69,7 +69,7 @@ export default function IndustryPage() {
             </div>
           </div>
           <div className="wash wash--tall" aria-hidden="true" data-reveal>
-            <img src="/images/jet-portrait.jpg" alt="" width={834} height={933} loading="lazy" />
+            <img src="/images/stock/industry-eligibility.jpg" alt="" width={900} height={1125} loading="lazy" decoding="async" />
           </div>
         </div>
       </Section>
