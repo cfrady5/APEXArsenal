@@ -102,7 +102,7 @@ export default function HomePage() {
           Who the Marketplace serves
         </h2>
         <div className="panels">
-          <Panel eyebrow="For Industry" title="Pitch your capability in five minutes" image="/images/jet-portrait.jpg">
+          <Panel eyebrow="For Industry" title="Pitch your capability in five minutes" image="/images/stock/panel-industry.jpg">
             <p>
               Present your capability in a five-minute pitch. Receive expert feedback on its technical merit. If your
               solution is determined to be awardable, make it discoverable by government customers seeking capabilities
@@ -112,7 +112,7 @@ export default function HomePage() {
               <Button href="/industry#pitch">Prepare Your Five-Minute Pitch</Button>
             </div>
           </Panel>
-          <Panel eyebrow="For Government" title="Find capabilities for your mission" image="/images/operators-wide.jpg">
+          <Panel eyebrow="For Government" title="Find capabilities for your mission" image="/images/stock/panel-government.jpg">
             <p>
               Find competitively assessed capabilities that support your mission. Access the Marketplace, review
               solutions, and connect directly with providers to explore potential acquisition.

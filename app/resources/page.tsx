@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 };
 
 const tiles = [
-  ["Air", "/images/stock/tile-air.jpg"],
-  ["Cyber", "/images/stock/tile-cyber.jpg"],
-  ["Space", "/images/stock/tile-space.jpg"],
-  ["C4ISR", "/images/stock/tile-c4isr.jpg"],
+  ["Workforce", "/images/stock/tile-workforce.jpg"],
+  ["Microelectronics", "/images/stock/tile-microelectronics.jpg"],
+  ["Space Systems", "/images/stock/tile-space.jpg"],
+  ["Sustainment", "/images/stock/tile-sustainment.jpg"],
 ];
 
 export default function ResourcesPage() {
@@ -78,13 +78,13 @@ export default function ResourcesPage() {
           <VideoCard
             title="Preparing Your Submission"
             body="Learn how to identify solution fit, address the four required pitch elements, and complete your five-minute video and submission form."
-            poster="/images/hero-jet.jpg"
+            poster="/images/stock/poster-submission.jpg"
             embedUrl={links.videoSubmission || undefined}
           />
           <VideoCard
             title="For Government Users"
             body="Learn how to access the Marketplace, review awardable solutions, and connect with providers."
-            poster="/images/operators-wide.jpg"
+            poster="/images/stock/poster-government.jpg"
             embedUrl={links.videoGovernment || undefined}
           />
         </div>
