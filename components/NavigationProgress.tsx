@@ -20,7 +20,17 @@ export default function NavigationProgress() {
       if (!a || a.target === "_blank" || a.hasAttribute("download")) return;
       const url = new URL(a.href, location.href);
       if (url.origin !== location.origin) return;
-      if (url.pathname === location.pathname) return; // same page (hash links)
+      if (url.pathname === location.pathname) {
+        // Same-page anchor: smooth scroll (unless reduced motion) without a route change.
+        if (!url.hash) return;
+        const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+        if (!target) return;
+        e.preventDefault();
+        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        target.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+        history.pushState(null, "", url.hash);
+        return;
+      }
       setState("loading");
       if (timer.current) window.clearTimeout(timer.current);
       timer.current = window.setTimeout(() => setState("idle"), 8000);

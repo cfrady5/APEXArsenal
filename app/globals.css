@@ -52,12 +52,8 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: calc(var(--header-h) + 16px);
-}
-
-/* Smooth scrolling only when an in-page anchor is activated (focus moves);
-   router-driven scroll-to-top on navigation stays instant. */
-html:focus-within {
-  scroll-behavior: smooth;
+  /* No CSS smooth scrolling: router navigation must land at the top instantly.
+     Same-page anchor links are smoothed in JavaScript (NavigationProgress). */
 }
 
 body {
