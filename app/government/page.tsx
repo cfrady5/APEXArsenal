@@ -53,7 +53,7 @@ export default function GovernmentPage() {
       </Section>
 
       <div className="wash wash--band" aria-hidden="true">
-        <img src="/images/stock/government-band.jpg" alt="" width={1800} height={686} loading="lazy" decoding="async" />
+        <img src="/images/stock/government-band.jpg" alt="" width={1000} height={381} loading="lazy" decoding="async" />
       </div>
 
       <Section tone="light" labelledBy="awardable-title">
