@@ -17,7 +17,7 @@ export default function HomePage() {
         <div
           className="hero__media"
           aria-hidden="true"
-          style={{ backgroundImage: `url(/images/hero-jet.jpg), url(${heroPlaceholder})` }}
+          style={{ backgroundImage: `url(/images/stock/hero.jpg), url(${heroPlaceholder})` }}
         />
         <div className="container">
           <div className="hero__inner hero-enter">

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const tiles = [
   ["Workforce", "/images/stock/tile-workforce.jpg"],
   ["Microelectronics", "/images/stock/tile-microelectronics.jpg"],
-  ["Space Systems", "/images/stock/tile-space.jpg"],
+  ["Emerging Technology", "/images/stock/tile-emerging-technology.jpg"],
   ["Sustainment", "/images/stock/tile-sustainment.jpg"],
 ];
 

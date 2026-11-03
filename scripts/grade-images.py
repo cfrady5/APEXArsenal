@@ -41,11 +41,11 @@ FOCUS = {
     "commercialization": ("03-america-makes-additive-manufacturing-for-equipment-repair.jpg", 0.5, 0.6),
     "emerging-technology": ("02-project-origin-robotic-combat-vehicle-training.jpg", 0.5, 0.5),
     "workforce": ("03-norfolk-naval-shipyard-apprentices-in-the-machine-shop.jpg", 0.5, 0.5),
-    "microelectronics": ("01-semiconductor-silicon-wafer.jpg", 0.5, 0.5),
+    "microelectronics": ("01-soldier-operating-beast-electronic-warfare-interface.jpg", 0.55, 0.5),
     "kinetic-weapons": ("04-precision-strike-missile-test-launch-from-himars.jpg", 0.5, 0.45),
-    "critical-chemicals": ("05-industrial-chemical-processing-factory.jpg", 0.5, 0.5),
+    "critical-chemicals": ("04-rock-island-arsenal-jmtc-manufacturing-add-on-armor.jpg", 0.5, 0.62),
     "casting-forging": ("02-watervliet-arsenal-heated-howitzer-tube-and-rotary-forge.jpg", 0.5, 0.5),
-    "space-systems": ("04-spacecraft-engineering-testing.jpg", 0.5, 0.5),
+    "space-systems": ("05-mq-28-ghost-bat-flyover.jpg", 0.5, 0.5),
     "industrial-base-readiness": ("03-rock-island-arsenal-jmtc-manufacturing-equipment-and-facility.jpg", 0.5, 0.5),
 }
 
@@ -64,9 +64,11 @@ if __name__ == "__main__":
     make("01-erdc-research-board-participants-reviewing-a-laboratory-model.jpg", "government-band.jpg", 21 / 8, 1800, ay=0.45)
     # Resources tiles (square), labeled by focus area
     make("01-cnc-machining-accelerated-training-in-defense-manufacturing.jpg", "tile-workforce.jpg", 1, 640, ax=0.3)
-    make("03-electronics-prototype-testing.jpg", "tile-microelectronics.jpg", 1, 640)
-    make("01-satellite-cleanroom-assembly.jpg", "tile-space.jpg", 1, 640)
+    make("04-soldiers-wearing-ivas-inside-a-stryker.jpg", "tile-microelectronics.jpg", 1, 640, ax=0.35)
+    make("04-marine-operating-a-stalker-small-unmanned-aircraft.jpg", "tile-emerging-technology.jpg", 1, 640, ax=0.4)
     make("03-marine-and-l-madis-counter-drone-equipment-in-australia.jpg", "tile-sustainment.jpg", 1, 640, ax=0.4)
+    # Home hero (3:2), Dark Eagle launcher at dusk
+    make("02-dark-eagle-at-valiant-shield-2026.jpg", "hero.jpg", 3 / 2, 1000, q=84)
     # Explainer video posters (16:9)
     make("01-watervliet-arsenal-big-gun-shop-interior.jpg", "poster-marketplace.jpg", 16 / 9, 1000)
     make("01-afrl-collaborative-automation-for-manufacturing-systems-laboratory.jpg", "poster-submission.jpg", 16 / 9, 1000, ay=0.35)
