@@ -929,8 +929,7 @@ p:last-child {
   grid-template-columns: 96px 1fr;
   grid-template-areas:
     "thumb title"
-    "thumb body"
-    "thumb link";
+    "thumb body";
   gap: 8px 18px;
   padding: 22px 12px 22px 0;
   border-bottom: 1px solid rgba(20, 20, 20, 0.14);
@@ -942,8 +941,7 @@ p:last-child {
     grid-template-columns: 44px 168px 1fr;
     grid-template-areas:
       "num thumb title"
-      "num thumb body"
-      "num thumb link";
+      "num thumb body";
     gap: 10px 24px;
     padding-block: 26px;
     align-items: start;
@@ -953,6 +951,31 @@ p:last-child {
 @media (min-width: 1200px) {
   .ledger li {
     grid-template-columns: 44px 184px 1fr;
+  }
+}
+
+.ledger li:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.section--light .ledger li:hover {
+  background: var(--hazy-blue);
+}
+
+.ledger__num {
+  grid-area: num;
+  display: none;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1;
+  padding-top: 2px;
+  color: var(--apex-purple);
+}
+
+@media (min-width: 760px) {
+  .ledger__num {
+    display: block;
   }
 }
 
@@ -983,63 +1006,6 @@ p:last-child {
 
 .ledger p {
   grid-area: body;
-}
-
-.ledger__link {
-  grid-area: link;
-}
-
-.ledger li:hover {
-  background: rgba(255, 255, 255, 0.55);
-}
-
-.section--light .ledger li:hover {
-  background: var(--hazy-blue);
-}
-
-.ledger__num {
-  grid-area: num;
-  display: none;
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 1.35rem;
-  line-height: 1;
-  padding-top: 2px;
-  color: var(--apex-purple);
-}
-
-@media (min-width: 760px) {
-  .ledger__num {
-    display: block;
-  }
-}
-
-.ledger h4 {
-  font-size: 1.25rem;
-}
-
-.ledger p {
-  margin: 0;
-  font-size: 0.95rem;
-}
-
-.ledger__link {
-  justify-self: start;
-  font-weight: 700;
-  font-size: 0.76rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--dod-black);
-  border-bottom: 2px solid var(--apex-purple);
-  padding-bottom: 3px;
-  white-space: nowrap;
-  transition: color 160ms var(--ease-out), border-color 160ms var(--ease-out);
-}
-
-.ledger__link:hover {
-  text-decoration: none;
-  color: var(--purple-text);
-  border-bottom-color: var(--purple-text);
 }
 
 /* ------------------------------------------------------------------

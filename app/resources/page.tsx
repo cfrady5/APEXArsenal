@@ -35,6 +35,12 @@ export default function ResourcesPage() {
           <Button href="#faq" variant="outline" onDark>
             Frequently Asked Questions
           </Button>
+          <Button href="#help-desk" variant="outline" onDark>
+            Help Desk
+          </Button>
+          <Button href="#office-hours" variant="outline" onDark>
+            Office Hours
+          </Button>
         </div>
       </PageHero>
 
@@ -99,9 +105,9 @@ export default function ResourcesPage() {
         <Faq />
       </Section>
 
-      <Section tone="hazy" labelledBy="helpdesk-title">
+      <Section id="support" tone="hazy" labelledBy="helpdesk-title">
         <div className="grid grid--2" data-reveal-group>
-          <article className="card card--light">
+          <article className="card card--light" id="help-desk">
             <span className="card__index">Help Desk</span>
             <h2 id="helpdesk-title" className="h2" style={{ fontSize: "clamp(1.7rem, 3vw, 2.4rem)" }}>
               Questions? Email the team
@@ -114,7 +120,7 @@ export default function ResourcesPage() {
               <Button href={links.helpDesk}>Contact the Help Desk</Button>
             </div>
           </article>
-          <article className="card card--light">
+          <article className="card card--light" id="office-hours">
             <span className="card__index">Office Hours and Assessment Feedback</span>
             <h2 className="h2" style={{ fontSize: "clamp(1.7rem, 3vw, 2.4rem)" }}>
               Plan your next submission
