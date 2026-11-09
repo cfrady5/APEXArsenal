@@ -4,7 +4,8 @@ import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import SectionHead from "@/components/SectionHead";
 import Steps from "@/components/Steps";
-import { links } from "@/lib/links";
+import { SUBMISSIONS_CLOSED, links } from "@/lib/links";
+import OpeningNote from "@/components/OpeningNote";
 
 export const metadata: Metadata = {
   title: "For Government",
@@ -36,8 +37,11 @@ export default function GovernmentPage() {
         intro="Explore solutions that support critical production and sustainment, emerging technology, workforce development, critical materials and components, weapon and space systems, and industrial base readiness."
       >
         <div className="actions">
-          <Button href={links.governmentMarketplace}>Access the Government Marketplace</Button>
+          <Button href={links.governmentMarketplace} disabled={SUBMISSIONS_CLOSED}>
+            Access the Government Marketplace
+          </Button>
         </div>
+        {SUBMISSIONS_CLOSED && <OpeningNote className="opening-note--on-dark" />}
       </PageHero>
 
       <Section tone="hazy" labelledBy="steps-title">
@@ -48,8 +52,11 @@ export default function GovernmentPage() {
         </SectionHead>
         <Steps steps={governmentSteps} />
         <div className="actions" data-reveal>
-          <Button href={links.governmentMarketplace}>Access the Government Marketplace</Button>
+          <Button href={links.governmentMarketplace} disabled={SUBMISSIONS_CLOSED}>
+            Access the Government Marketplace
+          </Button>
         </div>
+        {SUBMISSIONS_CLOSED && <OpeningNote />}
       </Section>
 
       <div className="wash wash--band" aria-hidden="true">

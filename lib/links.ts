@@ -22,5 +22,13 @@ export const links = {
   videoGovernment: env("NEXT_PUBLIC_VIDEO_GOVERNMENT_URL", ""),
 };
 
+/**
+ * Registration and submissions are not yet open. While true, every submit /
+ * manage / marketplace-access / explore action renders grayed out with the
+ * note below. Flip to false (or set NEXT_PUBLIC_SUBMISSIONS_OPEN=true) on opening day.
+ */
+export const SUBMISSIONS_CLOSED = process.env.NEXT_PUBLIC_SUBMISSIONS_OPEN !== "true";
+export const OPENING_NOTE = "Note: Registration and submissions open 1 December, 2026";
+
 /** True when a link is still pointing at the help-desk fallback. */
 export const isFallback = (href: string) => href.startsWith("mailto:");

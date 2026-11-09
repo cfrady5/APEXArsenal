@@ -7,7 +7,8 @@ import Section from "@/components/Section";
 import SectionHead from "@/components/SectionHead";
 import Steps from "@/components/Steps";
 import { industrySteps, pitchElements, submissionChecklist } from "@/lib/content";
-import { links } from "@/lib/links";
+import { SUBMISSIONS_CLOSED, links } from "@/lib/links";
+import OpeningNote from "@/components/OpeningNote";
 
 export const metadata: Metadata = {
   title: "For Industry",
@@ -24,7 +25,9 @@ export default function IndustryPage() {
         intro="Show how your solution addresses a Strategic Focus Area and strengthens the American defense industrial base. The Marketplace provides a streamlined submission process, expert assessment and feedback, and potential visibility to authorized government customers."
       >
         <div className="actions">
-          <Button href={links.submit}>Submit a Solution</Button>
+          <Button href={links.submit} disabled={SUBMISSIONS_CLOSED}>
+            Submit a Solution
+          </Button>
           <Button href="#fit" variant="outline" onDark>
             See If Your Solution Fits
           </Button>
@@ -32,6 +35,7 @@ export default function IndustryPage() {
             Prepare Your Five-Minute Pitch
           </Button>
         </div>
+        {SUBMISSIONS_CLOSED && <OpeningNote className="opening-note--on-dark" />}
       </PageHero>
 
       <Section id="fit" tone="hazy" labelledBy="fit-title">
@@ -135,11 +139,14 @@ export default function IndustryPage() {
           ))}
         </ul>
         <div className="actions" data-reveal>
-          <Button href={links.submit}>Submit a Solution</Button>
-          <Button href={links.manageSubmission} variant="outline">
+          <Button href={links.submit} disabled={SUBMISSIONS_CLOSED}>
+            Submit a Solution
+          </Button>
+          <Button href={links.manageSubmission} variant="outline" disabled={SUBMISSIONS_CLOSED}>
             Already participating? Manage Your Submission
           </Button>
         </div>
+        {SUBMISSIONS_CLOSED && <OpeningNote />}
       </Section>
 
       <Section tone="dark" labelledBy="help-title">

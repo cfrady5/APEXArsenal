@@ -4,7 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navigation } from "@/lib/content";
-import { links } from "@/lib/links";
+import { SUBMISSIONS_CLOSED, links } from "@/lib/links";
+import OpeningNote from "@/components/OpeningNote";
 import Button from "./Button";
 
 export default function Header() {
@@ -42,7 +43,9 @@ export default function Header() {
           </nav>
 
           <div className="header__cta">
-            <Button href={links.submit}>Submit a Solution</Button>
+            <Button href={links.submit} disabled={SUBMISSIONS_CLOSED}>
+              Submit a Solution
+            </Button>
           </div>
 
           <button
@@ -69,7 +72,10 @@ export default function Header() {
                   </li>
                 ))}
               </ul>
-              <Button href={links.submit}>Submit a Solution</Button>
+              <Button href={links.submit} disabled={SUBMISSIONS_CLOSED}>
+                Submit a Solution
+              </Button>
+              {SUBMISSIONS_CLOSED && <OpeningNote />}
             </div>
           </div>
         </div>

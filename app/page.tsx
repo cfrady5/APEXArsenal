@@ -6,7 +6,8 @@ import Section from "@/components/Section";
 import SectionHead from "@/components/SectionHead";
 import Steps from "@/components/Steps";
 import { homeSteps } from "@/lib/content";
-import { links } from "@/lib/links";
+import { SUBMISSIONS_CLOSED, links } from "@/lib/links";
+import OpeningNote from "@/components/OpeningNote";
 import { heroPlaceholder } from "@/lib/placeholders";
 
 export default function HomePage() {
@@ -29,13 +30,14 @@ export default function HomePage() {
             </p>
             <div className="actions">
               <Button href="/#focus-areas">See If Your Solution Fits</Button>
-              <Button href="/government" variant="outline" onDark>
+              <Button href="/government" variant="outline" onDark disabled={SUBMISSIONS_CLOSED}>
                 Explore Assessed Solutions
               </Button>
               <Button href="/#how-it-works" variant="link" glyph={false}>
                 How It Works
               </Button>
             </div>
+            {SUBMISSIONS_CLOSED && <OpeningNote className="opening-note--on-dark" />}
             <p className="hero__sponsor">
               Help sustain, modernize, and grow the American defense industrial base, and deliver critical capabilities
               to the warfighter.
@@ -118,10 +120,11 @@ export default function HomePage() {
               solutions, and connect directly with providers to explore potential acquisition.
             </p>
             <div className="actions">
-              <Button href="/government" variant="outline" onDark>
+              <Button href="/government" variant="outline" onDark disabled={SUBMISSIONS_CLOSED}>
                 Explore Assessed Solutions
               </Button>
             </div>
+            {SUBMISSIONS_CLOSED && <OpeningNote className="opening-note--on-dark" />}
           </Panel>
         </div>
       </section>

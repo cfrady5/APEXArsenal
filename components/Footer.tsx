@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { navigation } from "@/lib/content";
-import { links } from "@/lib/links";
+import { SUBMISSIONS_CLOSED, links } from "@/lib/links";
+import OpeningNote from "@/components/OpeningNote";
 
 export default function Footer() {
   return (
@@ -36,15 +37,25 @@ export default function Footer() {
         <div>
           <h3>Participate</h3>
           <ul>
-            <li>
-              <a href={links.submit}>Submit a Solution</a>
-            </li>
-            <li>
-              <a href={links.manageSubmission}>Manage Your Submission</a>
-            </li>
-            <li>
-              <a href={links.governmentMarketplace}>Government Access</a>
-            </li>
+            {SUBMISSIONS_CLOSED ? (
+              <>
+                <li className="footer__muted">Submit a Solution</li>
+                <li className="footer__muted">Manage Your Submission</li>
+                <li className="footer__muted">Government Access</li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <a href={links.submit}>Submit a Solution</a>
+                </li>
+                <li>
+                  <a href={links.manageSubmission}>Manage Your Submission</a>
+                </li>
+                <li>
+                  <a href={links.governmentMarketplace}>Government Access</a>
+                </li>
+              </>
+            )}
             <li>
               <a href={links.solicitation}>Read the Solicitation</a>
             </li>
@@ -52,6 +63,7 @@ export default function Footer() {
               <a href={links.rubric}>Assessment Rubric</a>
             </li>
           </ul>
+          {SUBMISSIONS_CLOSED && <OpeningNote className="opening-note--footer" />}
         </div>
 
         <div>

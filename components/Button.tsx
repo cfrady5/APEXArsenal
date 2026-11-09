@@ -8,12 +8,16 @@ type Props = {
   onDark?: boolean;
   glyph?: boolean;
   className?: string;
+  /** Render as an inert, grayed-out control (no navigation). */
+  disabled?: boolean;
 };
 
 const isExternal = (href: string) => /^(https?:|mailto:|tel:)/.test(href);
 
-export default function Button({ href, children, variant = "primary", onDark, glyph = true, className = "" }: Props) {
-  const cls = ["btn", `btn--${variant}`, onDark ? "btn--on-dark" : "", className].filter(Boolean).join(" ");
+export default function Button({ href, children, variant = "primary", onDark, glyph = true, className = "", disabled }: Props) {
+  const cls = ["btn", `btn--${variant}`, onDark ? "btn--on-dark" : "", disabled ? "btn--disabled" : "", className]
+    .filter(Boolean)
+    .join(" ");
   const inner = (
     <>
       <span>{children}</span>
@@ -24,6 +28,13 @@ export default function Button({ href, children, variant = "primary", onDark, gl
       )}
     </>
   );
+  if (disabled) {
+    return (
+      <span className={cls} aria-disabled="true" role="link">
+        {inner}
+      </span>
+    );
+  }
   if (isExternal(href)) {
     const external = href.startsWith("http");
     return (
