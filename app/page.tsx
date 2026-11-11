@@ -6,13 +6,19 @@ import Section from "@/components/Section";
 import SectionHead from "@/components/SectionHead";
 import Steps from "@/components/Steps";
 import { homeSteps } from "@/lib/content";
-import { SUBMISSIONS_CLOSED, links } from "@/lib/links";
+import { OPENING_NOTE, SUBMISSIONS_CLOSED, links } from "@/lib/links";
 import OpeningNote from "@/components/OpeningNote";
 import { heroPlaceholder } from "@/lib/placeholders";
 
 export default function HomePage() {
   return (
     <>
+      {SUBMISSIONS_CLOSED && (
+        <div className="notice-banner" role="status">
+          <div className="container notice-banner__inner">{OPENING_NOTE}</div>
+        </div>
+      )}
+
       {/* Hero */}
       <section className="hero" aria-labelledby="hero-title">
         <div
@@ -29,15 +35,14 @@ export default function HomePage() {
               become discoverable by authorized government customers for potential acquisition.
             </p>
             <div className="actions">
-              <Button href="/#focus-areas">See If Your Solution Fits</Button>
-              <Button href="/government" variant="outline" onDark disabled={SUBMISSIONS_CLOSED}>
-                Explore Assessed Solutions
+              <Button href="/industry">Industry Users</Button>
+              <Button href="/government" variant="outline" onDark>
+                Government Users
               </Button>
               <Button href="/#how-it-works" variant="link" glyph={false}>
                 How It Works
               </Button>
             </div>
-            {SUBMISSIONS_CLOSED && <OpeningNote className="opening-note--on-dark" />}
             <p className="hero__sponsor">
               Help sustain, modernize, and grow the American defense industrial base, and deliver critical capabilities
               to the warfighter.

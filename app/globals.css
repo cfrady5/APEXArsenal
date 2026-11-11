@@ -757,6 +757,43 @@ p:last-child {
   }
 }
 
+/* Home notice banner (registration opening date) */
+.notice-banner {
+  background: var(--purple-deep);
+  color: var(--dod-white);
+}
+
+.notice-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding-block: 12px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.notice-banner__inner::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  background: var(--apex-turquoise);
+}
+
+@media (max-width: 600px) {
+  .notice-banner__inner {
+    font-size: 0.88rem;
+  }
+
+  .notice-banner__inner::before {
+    display: none;
+  }
+}
+
 /* ------------------------------------------------------------------
    Home hero
    ------------------------------------------------------------------ */

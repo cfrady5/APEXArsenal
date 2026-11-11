@@ -13,6 +13,7 @@ export const links = {
   helpDesk: `mailto:${HELP_DESK_EMAIL}`,
   solicitation: env("NEXT_PUBLIC_SOLICITATION_URL", `mailto:${HELP_DESK_EMAIL}?subject=Solicitation%20request`),
   rubric: env("NEXT_PUBLIC_RUBRIC_URL", `mailto:${HELP_DESK_EMAIL}?subject=Assessment%20rubric%20request`),
+  account: env("NEXT_PUBLIC_ACCOUNT_URL", `mailto:${HELP_DESK_EMAIL}?subject=Create%20or%20log%20in%20to%20my%20account`),
   submit: env("NEXT_PUBLIC_SUBMIT_URL", `mailto:${HELP_DESK_EMAIL}?subject=Solution%20submission`),
   manageSubmission: env("NEXT_PUBLIC_MANAGE_SUBMISSION_URL", `mailto:${HELP_DESK_EMAIL}?subject=Manage%20my%20submission`),
   governmentMarketplace: env("NEXT_PUBLIC_GOVERNMENT_MARKETPLACE_URL", `mailto:${HELP_DESK_EMAIL}?subject=Government%20Marketplace%20access`),

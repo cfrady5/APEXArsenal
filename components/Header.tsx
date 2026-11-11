@@ -43,8 +43,8 @@ export default function Header() {
           </nav>
 
           <div className="header__cta">
-            <Button href={links.submit} disabled={SUBMISSIONS_CLOSED}>
-              Submit a Solution
+            <Button href={links.account} disabled={SUBMISSIONS_CLOSED}>
+              Create/Login Account
             </Button>
           </div>
 
@@ -72,8 +72,8 @@ export default function Header() {
                   </li>
                 ))}
               </ul>
-              <Button href={links.submit} disabled={SUBMISSIONS_CLOSED}>
-                Submit a Solution
+              <Button href={links.account} disabled={SUBMISSIONS_CLOSED}>
+                Create/Login Account
               </Button>
               {SUBMISSIONS_CLOSED && <OpeningNote />}
             </div>
