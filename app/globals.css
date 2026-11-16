@@ -759,38 +759,30 @@ p:last-child {
 
 /* Home notice banner (registration opening date) */
 .notice-banner {
-  background: var(--purple-deep);
-  color: var(--dod-white);
+  background: var(--apex-turquoise);
+  color: var(--dod-black);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.15);
 }
 
 .notice-banner__inner {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  min-height: 48px;
-  padding-block: 12px;
+  min-height: 72px;
+  padding-block: 18px;
   font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.02em;
+  font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+  line-height: 1.35;
+  letter-spacing: 0.01em;
   text-align: center;
-}
-
-.notice-banner__inner::before {
-  content: "";
-  flex: none;
-  width: 8px;
-  height: 8px;
-  background: var(--apex-turquoise);
+  text-wrap: balance;
 }
 
 @media (max-width: 600px) {
   .notice-banner__inner {
-    font-size: 0.88rem;
-  }
-
-  .notice-banner__inner::before {
-    display: none;
+    min-height: 64px;
+    padding-block: 14px;
+    font-size: 1.02rem;
   }
 }
 
