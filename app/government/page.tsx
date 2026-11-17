@@ -132,7 +132,7 @@ export default function GovernmentPage() {
             </p>
             <div className="links-row">
               <a href={links.helpDesk}>Contact the Help Desk</a>
-              <a href={links.officeHours}>Schedule Office Hours</a>
+              <a href={links.officeHours} target="_blank" rel="noopener noreferrer">Schedule Office Hours</a>
             </div>
           </div>
           <div className="support__contact">

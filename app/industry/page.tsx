@@ -160,7 +160,7 @@ export default function IndustryPage() {
               subsequent collection period.
             </p>
             <div className="links-row">
-              <a href={links.officeHours}>Schedule Office Hours</a>
+              <a href={links.officeHours} target="_blank" rel="noopener noreferrer">Schedule Office Hours</a>
               <a href={links.helpDesk}>Contact the Help Desk</a>
               <a href="/resources#faq">Read the FAQs</a>
             </div>

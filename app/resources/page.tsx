@@ -38,7 +38,7 @@ export default function ResourcesPage() {
           <Button href="#help-desk" variant="outline" onDark>
             Help Desk
           </Button>
-          <Button href="#office-hours" variant="outline" onDark>
+          <Button href={links.officeHours} variant="outline" onDark>
             Office Hours
           </Button>
         </div>

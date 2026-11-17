@@ -144,7 +144,7 @@ export default function HomePage() {
             </p>
             <div className="links-row">
               <a href={links.helpDesk}>Contact the Help Desk</a>
-              <a href={links.officeHours}>Schedule Office Hours</a>
+              <a href={links.officeHours} target="_blank" rel="noopener noreferrer">Schedule Office Hours</a>
               <Link href="/resources#faq">Read the FAQs</Link>
             </div>
           </div>

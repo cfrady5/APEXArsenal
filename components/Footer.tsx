@@ -73,7 +73,7 @@ export default function Footer() {
               <a href={links.helpDesk}>{links.helpDeskEmail}</a>
             </li>
             <li>
-              <a href={links.officeHours}>Schedule Office Hours</a>
+              <a href={links.officeHours} target="_blank" rel="noopener noreferrer">Schedule Office Hours</a>
             </li>
           </ul>
           <h3 style={{ marginTop: 28 }}>Sponsor</h3>
