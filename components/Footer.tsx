@@ -57,7 +57,7 @@ export default function Footer() {
               </>
             )}
             <li>
-              <a href={links.solicitation}>Read the Solicitation</a>
+              <a href={links.solicitation} target="_blank" rel="noopener noreferrer">Read the Solicitation</a>
             </li>
             <li>
               <a href={links.rubric}>Assessment Rubric</a>

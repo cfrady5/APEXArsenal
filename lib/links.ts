@@ -11,7 +11,7 @@ const env = (key: string, fallback: string) => process.env[key] || fallback;
 export const links = {
   helpDeskEmail: HELP_DESK_EMAIL,
   helpDesk: `mailto:${HELP_DESK_EMAIL}`,
-  solicitation: env("NEXT_PUBLIC_SOLICITATION_URL", `mailto:${HELP_DESK_EMAIL}?subject=Solicitation%20request`),
+  solicitation: env("NEXT_PUBLIC_SOLICITATION_URL", "https://sam.gov/workspace/contract/opp/17f8feb450c74fdf98a1662fcb16d4bd/view"),
   rubric: env("NEXT_PUBLIC_RUBRIC_URL", `mailto:${HELP_DESK_EMAIL}?subject=Assessment%20rubric%20request`),
   account: env("NEXT_PUBLIC_ACCOUNT_URL", `mailto:${HELP_DESK_EMAIL}?subject=Create%20or%20log%20in%20to%20my%20account`),
   submit: env("NEXT_PUBLIC_SUBMIT_URL", `mailto:${HELP_DESK_EMAIL}?subject=Solution%20submission`),

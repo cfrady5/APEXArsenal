@@ -69,7 +69,7 @@ export default function IndustryPage() {
               and export laws. Review the solicitation for eligibility requirements.
             </p>
             <div className="links-row">
-              <a href={links.solicitation}>Read the Solicitation</a>
+              <a href={links.solicitation} target="_blank" rel="noopener noreferrer">Read the Solicitation</a>
             </div>
           </div>
           <div className="wash wash--tall" aria-hidden="true" data-reveal>
@@ -121,7 +121,7 @@ export default function IndustryPage() {
         </SectionHead>
         <Rows items={pitchElements} />
         <div className="links-row">
-          <a href={links.solicitation}>Read the Solicitation</a>
+          <a href={links.solicitation} target="_blank" rel="noopener noreferrer">Read the Solicitation</a>
           <a href={links.rubric}>View Assessment Rubric</a>
         </div>
       </Section>

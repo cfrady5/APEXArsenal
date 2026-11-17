@@ -96,7 +96,7 @@ export default function ResourcesPage() {
         </div>
         <div className="links-row" data-reveal>
           <a href="/industry#checklist">Submission Checklist</a>
-          <a href={links.solicitation}>Read the Solicitation</a>
+          <a href={links.solicitation} target="_blank" rel="noopener noreferrer">Read the Solicitation</a>
         </div>
       </Section>
 
